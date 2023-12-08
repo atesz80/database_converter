@@ -3,7 +3,7 @@
 ## Az alkalmazásról
 
 Az alkalmazás segítségével könnyedén lementhetjük adatbázis tábláink tartalmát csv file-okba.
-A program nagyon egyszerűen működik, csak ki kell választani a menteni kívánt táblát vagy táblákat és a Mentés gombra kattintva megtörténik a táblák tartalma csv file-okba mentése.
+A program nagyon egyszerűen működik, csak ki kell választani a menteni kívánt táblát vagy táblákat és a "Mentés" gombra kattintva megtörténik a táblák tartalma csv file-okba mentése.
 
 ## Telepítés
 
