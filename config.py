@@ -1,3 +1,7 @@
 ENV='local'
 
-db={'user':'admin', 'admin', 'db':'test', 'host':'localhost'}
+db={'user':'root', 
+    'password': 'root',
+    'db':'test',
+    'host':'localhost'
+}
