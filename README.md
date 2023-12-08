@@ -11,6 +11,8 @@ Töltse a repository-ból a szükséges file-okat
 Futtatás előtt hozzon létre egy virtuális környezetet.
 ```bash
 pip3 -m venv env
+```
+```bash
 source env/bin/activate
 ```
 Telepítse a függőségeket
