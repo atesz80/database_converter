@@ -12,6 +12,7 @@ Futtatás előtt hozzon létre egy virtuális környezetet.
 ```bash
 pip3 -m venv env
 ```
+Aktiválja a virtuális környezetet.
 ```bash
 source env/bin/activate
 ```
