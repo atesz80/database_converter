@@ -8,6 +8,9 @@ A program nagyon egyszerűen működik, csak ki kell választani a menteni kív�
 ## Telepítés
 
 Töltse a repository-ból a szükséges file-okat
+
+[https://github.com/atesz80/database_converter]
+
 Futtatás előtt hozzon létre egy virtuális környezetet.
 ```bash
 pip3 -m venv env
