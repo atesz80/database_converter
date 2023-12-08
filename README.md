@@ -13,7 +13,7 @@ https://github.com/atesz80/database_converter.git
 
 Futtatás előtt hozzon létre egy virtuális környezetet.
 ```bash
-pip3 -m venv env
+python3 -m venv env
 ```
 Aktiválja a virtuális környezetet.
 ```bash
