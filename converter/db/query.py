@@ -2,9 +2,10 @@ from __future__ import annotations
 from db.db import get_db_session as session
 from db.config import config as cnf
 
+
 class Queries(object):
 
-    """ Lekérdezések """
+    """ Az osztály az SQL lekérdezésekhez szükséges """
 
 
     def __init__(self, dbconfig: str = cnf.db) -> None:

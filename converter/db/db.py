@@ -1,10 +1,18 @@
 from __future__ import annotations
-
 import mysql.connector
 from mysql.connector import Error
 
 
 class SQL(object):
+
+    """ 
+        
+        Az osztály az adatbázis eléréséhez szükésges. 
+        MYSQL adatbázis kapcsolatot valósít meg 
+        és a metódusokkal tudjuk lekérdezni vagy módosítani illetve
+        beilleszteni a táblákba a rekordokat. 
+        
+    """
 
     _session = None
     _connection = None
@@ -12,9 +20,14 @@ class SQL(object):
     connection = None
 
     def __init__(self, db_config: dict) -> None:
+
+        """ Konstruktor """
+
         self._config = db_config
 
-    def open(self)->object | str:
+    def open(self) -> object | str:
+
+        """ A metódus az adatbázis kapcsolatot valósítja meg """
 
         try:
             cnx = mysql.connector.connect(
@@ -29,7 +42,9 @@ class SQL(object):
         except Error as err:
             print(f"Error: '{err}'")
 
-    def close(self)->None:
+    def close(self) -> None:
+
+        """ A metódus az adatbázis kapcsolat lezárásához """
 
         try:
             self._session.close()
@@ -39,7 +54,9 @@ class SQL(object):
         except Error as err:
             print(f"Error: '{err}'")
 
-    def isopen(self)->None:
+    def isopen(self) -> None:
+
+        """ Az adatbázis kapcsolat létrejött-e """
 
         try:
             if self._connection.is_connected is None:
@@ -58,7 +75,9 @@ class SQL(object):
             print(f"Error: '{err}'")
             return False
 
-    def read(self, query:str)->list | str:
+    def read(self, query: str)->list | str:
+
+        """ A metódus az SQL lekérdezésekhez szükséges (SELECT) """
 
         result = None
 
@@ -81,11 +100,12 @@ class SQL(object):
 
     def insert(self, query: str)->bool | str:
 
-        # result = None
+        """ A metódus az adatok adatbázis táblákba való beillesztését 
+            és azok módosítását oldja meg """
+
         try:
             self.open()
             self._session.execute(query)
-            # result = self.__session.fetchall()
             self._connection.commit()
             self.close()
             return True
@@ -96,4 +116,7 @@ class SQL(object):
 
 
 def get_db_session(dbconfig: str)->SQL:
+
+    """ Adatbázis session létrehozása """
+
     return SQL(dbconfig)

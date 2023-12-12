@@ -1,4 +1,5 @@
-ENV='local'
+# Adatbázis kapcsolat konfiguráció
+##################################
 
 db={'user':'root', 
     'password': 'root',
