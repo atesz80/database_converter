@@ -5,13 +5,13 @@ from mysql.connector import Error
 
 class SQL(object):
 
-    """ 
-        
-        Az osztály az adatbázis eléréséhez szükésges. 
-        MYSQL adatbázis kapcsolatot valósít meg 
+    """
+
+        Az osztály az adatbázis eléréséhez szükésges.
+        MYSQL adatbázis kapcsolatot valósít meg
         és a metódusokkal tudjuk lekérdezni vagy módosítani illetve
-        beilleszteni a táblákba a rekordokat. 
-        
+        beilleszteni a táblákba a rekordokat.
+
     """
 
     _session = None
@@ -75,7 +75,7 @@ class SQL(object):
             print(f"Error: '{err}'")
             return False
 
-    def read(self, query: str)->list | str:
+    def read(self, query: str) -> list | str:
 
         """ A metódus az SQL lekérdezésekhez szükséges (SELECT) """
 
@@ -98,10 +98,12 @@ class SQL(object):
             print(f"Error: '{err}'")
             self.close()
 
-    def insert(self, query: str)->bool | str:
+    def insert(self, query: str) -> bool | str:
 
-        """ A metódus az adatok adatbázis táblákba való beillesztését 
-            és azok módosítását oldja meg """
+        """
+            A metódus az adatok adatbázis táblákba való beillesztését
+            és azok módosítását oldja meg
+        """
 
         try:
             self.open()
@@ -115,7 +117,7 @@ class SQL(object):
             self.close()
 
 
-def get_db_session(dbconfig: str)->SQL:
+def get_db_session(dbconfig: str) -> SQL:
 
     """ Adatbázis session létrehozása """
 

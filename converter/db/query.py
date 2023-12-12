@@ -7,13 +7,11 @@ class Queries(object):
 
     """ Az osztály az SQL lekérdezésekhez szükséges """
 
-
     def __init__(self, dbconfig: str = cnf.db) -> None:
 
         """ Konstruktor """
-        
-        self.session=session(dbconfig=dbconfig)
 
+        self.session = session(dbconfig=dbconfig)
 
     def get_tablenames(self) -> list | None:
 
@@ -31,11 +29,10 @@ class Queries(object):
 
         if (rows):
             return [row for row in rows[0].values()]
-        
+
         else:
             return None
 
-        
     def get_table_column_names(self, tablename: str) -> list:
 
         """ A metódus visszatér a tábla mezőneveivel """
@@ -51,11 +48,12 @@ class Queries(object):
         rows = self.session.read(query['query'] % query['parameter'])
 
         if (rows):
-            return [value for row in rows for key, value in row.items() if key == 'Field']
-        
+            return [value for row in rows
+                    for key, value in row.items()
+                    if key == 'Field']
+
         else:
             return None
-
 
     def get_table_contents(self, tablename: str) -> list | None:
 
@@ -73,6 +71,6 @@ class Queries(object):
 
         if (result):
             return result
-        
+
         else:
             return None
