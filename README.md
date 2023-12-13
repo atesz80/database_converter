@@ -23,3 +23,8 @@ Telepítse a függőségeket
 ```bash
 pip3 install -r requirements.txt
 ```
+Indítsa el az alkalmazást terminálból vagy parancssorból:
+```bash
+cd converter
+python3.9 main.py
+```
