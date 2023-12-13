@@ -12,7 +12,7 @@ class Converter(object):
 
         self.tables = tables
 
-    def converter(self):
+    def converter(self) -> None:
 
         """ A metódus végzi el táblák mentését csv fájlokba """
 

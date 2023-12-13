@@ -11,7 +11,7 @@ class MyFrame(wx.Frame):
 
     """ Az alkalmazás ablakának implementálása """
 
-    def __init__(self, parent):
+    def __init__(self, parent: wx.Window) -> None:
 
         """ Konstruktor """
 
@@ -25,7 +25,6 @@ class MyFrame(wx.Frame):
         self.panel = MyPanel(self)
 
         oQuery = query.Queries()
-        print(oQuery.get_tablenames())
         self.grid = MyGrid(self.panel, tables=oQuery.get_tablenames())
 
         self.save_button = MyButton(self.panel, label='Save')
@@ -41,7 +40,7 @@ class MyFrame(wx.Frame):
 
         self.panel.SetSizer(sizer)
 
-    def SaveOnClicked(self, event):
+    def SaveOnClicked(self, event: grd.GridEvent) -> None:
 
         """ A Mentés gomb eseménykezelő metódusa """
 
@@ -54,7 +53,7 @@ class MyFrame(wx.Frame):
             oConverter = Converter(tables=table)
             oConverter.converter()
 
-    def CloseOnClicked(self, event):
+    def CloseOnClicked(self, event: grd.GridEvent) -> None:
 
         """ A Bezárás gomb eseménykezelő metódusa """
 
@@ -65,7 +64,7 @@ class MyPopup(wx.Frame):
 
     """ Felugró ablak osztálya hibaüzenethez """
 
-    def __init__(self, title, label):
+    def __init__(self, title: str, label: str) -> None:
 
         """ Konstructor """
 
@@ -85,7 +84,7 @@ class MyPopup(wx.Frame):
 
         self.close_button.Bind(wx.EVT_BUTTON, self.OnClicked)
 
-    def OnClicked(self, event):
+    def OnClicked(self, event: grd.GridEvent) -> None:
 
         """ Bezárás gomb eseménykezelő metódusa """
 
@@ -96,7 +95,7 @@ class MyButton(wx.Button):
 
     """ Gomb osztálya """
 
-    def __init__(self, parent, label: str):
+    def __init__(self, parent: wx.Window, label: str) -> None:
 
         """ Konstruktor """
 
@@ -107,7 +106,7 @@ class MyPanel(wx.Panel):
 
     """ Panel osztálya """
 
-    def __init__(self, parent):
+    def __init__(self, parent: wx.Window) -> None:
 
         """ Konstruktor """
 
@@ -118,7 +117,7 @@ class MyGrid(grd.Grid):
 
     """ A táblázat osztálya az adatbázis táblák listázásához. """
 
-    def __init__(self, parent, tables: list) -> None:
+    def __init__(self, parent: wx.Window, tables: list) -> None:
 
         """ Konstruktor """
 
