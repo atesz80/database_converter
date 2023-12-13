@@ -25,6 +25,7 @@ class MyFrame(wx.Frame):
         self.panel = MyPanel(self)
 
         oQuery = query.Queries()
+        print(oQuery.get_tablenames())
         self.grid = MyGrid(self.panel, tables=oQuery.get_tablenames())
 
         self.save_button = MyButton(self.panel, label='Save')

@@ -33,5 +33,6 @@ class CSVGenerator(object):
                                     quotechar='"',
                                     quoting=QUOTE_ALL)
             writer.writeheader()
-            for row in self.content:
-                writer.writerow(row)
+            if self.content is not None:
+                for row in self.content:
+                    writer.writerow(row)

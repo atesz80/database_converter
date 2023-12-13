@@ -3,6 +3,6 @@
 
 db={'user':'root', 
     'password': 'root',
-    'db':'test',
+    'db':'mysql',
     'host':'localhost'
 }

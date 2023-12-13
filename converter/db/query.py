@@ -28,7 +28,7 @@ class Queries(object):
         rows = self.session.read(query['query'] % query['parameter'])
 
         if (rows):
-            return [row for row in rows[0].values()]
+            return [row['Tables_in_mysql'] for row in rows]
 
         else:
             return None
